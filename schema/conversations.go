@@ -59,12 +59,12 @@ func NewConversationsClient() ConversationsClient {
 // Most channels only support the semantics of bots initiating a direct message conversation.  An example of how to do
 // that would be:
 //
-// ```
+// """
 // var resource = await connector.conversations.CreateConversation(new ConversationParameters(){ Bot = bot, members =
 // new ChannelAccount[] { new ChannelAccount("user1") } );
 // await connect.Conversations.SendToConversationAsync(resource.Id, new Activity() ... ) ;
 //
-// ```
+// """
     // Parameters:
         // parameters - parameters to create the conversation from
 func (client ConversationsClient) CreateConversationMethod(ctx context.Context, parameters ConversationParametersType) (result ConversationResourceResponseType, err error) {
@@ -908,7 +908,7 @@ func (client ConversationsClient) UpdateActivityMethodResponder(resp *http.Respo
         return
     }
 
-// UploadAttachmentMethod upload an attachment directly into a channel's blob storage.
+// UploadAttachmentMethod upload an attachment directly into a channel"s blob storage.
 //
 // This is useful because it allows you to store data in a compliant store when dealing with enterprises.
 //

@@ -18,12 +18,12 @@ type BotRecipe struct {
 	/**
 	 * Version of the recipe.
 	 */
-	version string `json:"version"`
+	version string "json:"version""
 
 	/**
 	 *
 	 */
-	resources []string `json:"resources"`
+	resources []string "json:"resources""
 	/**
 	 * Creates a new BotRecipe instance.
 	 */

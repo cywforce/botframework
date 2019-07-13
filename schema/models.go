@@ -11,7 +11,7 @@ import (
     "io"
 )
 
-// The package's fully qualified name.
+// The package"s fully qualified name.
 const fqdn = "generated"
 
         // ActionTypesEnum enumerates the values for action types enum.
@@ -258,359 +258,359 @@ const fqdn = "generated"
 
             // ActivityType an Activity is the basic communication type for the Bot Framework 3.0 protocol.
             type ActivityType struct {
-            // Type - Contains the activity type. Possible values include: 'Message', 'ContactRelationUpdate', 'ConversationUpdate', 'Typing', 'EndOfConversation', 'Event', 'Invoke', 'DeleteUserData', 'MessageUpdate', 'MessageDelete', 'InstallationUpdate', 'MessageReaction', 'Suggestion', 'Trace', 'Handoff'
-            Type ActivityTypesEnum `json:"type,omitempty"`
+            // Type - Contains the activity type. Possible values include: "Message", "ContactRelationUpdate", "ConversationUpdate", "Typing", "EndOfConversation", "Event", "Invoke", "DeleteUserData", "MessageUpdate", "MessageDelete", "InstallationUpdate", "MessageReaction", "Suggestion", "Trace", "Handoff"
+            Type ActivityTypesEnum "json:"type,omitempty""
             // ID - Contains an ID that uniquely identifies the activity on the channel.
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Timestamp - Contains the date and time that the message was sent, in UTC, expressed in ISO-8601 format.
-            Timestamp *date.Time `json:"timestamp,omitempty"`
+            Timestamp *date.Time "json:"timestamp,omitempty""
             // LocalTimestamp - Contains the local date and time of the message, expressed in ISO-8601 format.
             // For example, 2016-09-23T13:07:49.4714686-07:00.
-            LocalTimestamp *date.Time `json:"localTimestamp,omitempty"`
+            LocalTimestamp *date.Time "json:"localTimestamp,omitempty""
             // LocalTimezone - Contains the name of the local timezone of the message, expressed in IANA Time Zone database format.
             // For example, America/Los_Angeles.
-            LocalTimezone *string `json:"localTimezone,omitempty"`
+            LocalTimezone *string "json:"localTimezone,omitempty""
             // CallerID - A string containing an IRI identifying the caller of a bot. This field is not intended to be transmitted
             // over the wire, but is instead populated by bots and clients based on cryptographically verifiable data
             // that asserts the identity of the callers (e.g. tokens).
-            CallerID *string `json:"callerId,omitempty"`
-            // ServiceURL - Contains the URL that specifies the channel's service endpoint. Set by the channel.
-            ServiceURL *string `json:"serviceUrl,omitempty"`
+            CallerID *string "json:"callerId,omitempty""
+            // ServiceURL - Contains the URL that specifies the channel"s service endpoint. Set by the channel.
+            ServiceURL *string "json:"serviceUrl,omitempty""
             // ChannelID - Contains an ID that uniquely identifies the channel. Set by the channel.
-            ChannelID *string `json:"channelId,omitempty"`
+            ChannelID *string "json:"channelId,omitempty""
             // From - Identifies the sender of the message.
-            From *ChannelAccountType `json:"from,omitempty"`
+            From *ChannelAccountType "json:"from,omitempty""
             // Conversation - Identifies the conversation to which the activity belongs.
-            Conversation *ConversationAccountType `json:"conversation,omitempty"`
+            Conversation *ConversationAccountType "json:"conversation,omitempty""
             // Recipient - Identifies the recipient of the message.
-            Recipient *ChannelAccountType `json:"recipient,omitempty"`
-            // TextFormat - Format of text fields Default:markdown. Possible values include: 'Markdown', 'Plain', 'XML'
-            TextFormat TextFormatTypesEnum `json:"textFormat,omitempty"`
-            // AttachmentLayout - The layout hint for multiple attachments. Default: list. Possible values include: 'List', 'Carousel'
-            AttachmentLayout AttachmentLayoutTypesEnum `json:"attachmentLayout,omitempty"`
+            Recipient *ChannelAccountType "json:"recipient,omitempty""
+            // TextFormat - Format of text fields Default:markdown. Possible values include: "Markdown", "Plain", "XML"
+            TextFormat TextFormatTypesEnum "json:"textFormat,omitempty""
+            // AttachmentLayout - The layout hint for multiple attachments. Default: list. Possible values include: "List", "Carousel"
+            AttachmentLayout AttachmentLayoutTypesEnum "json:"attachmentLayout,omitempty""
             // MembersAdded - The collection of members added to the conversation.
-            MembersAdded *[]ChannelAccountType `json:"membersAdded,omitempty"`
+            MembersAdded *[]ChannelAccountType "json:"membersAdded,omitempty""
             // MembersRemoved - The collection of members removed from the conversation.
-            MembersRemoved *[]ChannelAccountType `json:"membersRemoved,omitempty"`
+            MembersRemoved *[]ChannelAccountType "json:"membersRemoved,omitempty""
             // ReactionsAdded - The collection of reactions added to the conversation.
-            ReactionsAdded *[]MessageReactionType `json:"reactionsAdded,omitempty"`
+            ReactionsAdded *[]MessageReactionType "json:"reactionsAdded,omitempty""
             // ReactionsRemoved - The collection of reactions removed from the conversation.
-            ReactionsRemoved *[]MessageReactionType `json:"reactionsRemoved,omitempty"`
+            ReactionsRemoved *[]MessageReactionType "json:"reactionsRemoved,omitempty""
             // TopicName - The updated topic name of the conversation.
-            TopicName *string `json:"topicName,omitempty"`
+            TopicName *string "json:"topicName,omitempty""
             // HistoryDisclosed - Indicates whether the prior history of the channel is disclosed.
-            HistoryDisclosed *bool `json:"historyDisclosed,omitempty"`
+            HistoryDisclosed *bool "json:"historyDisclosed,omitempty""
             // Locale - A locale name for the contents of the text field.
             // The locale name is a combination of an ISO 639 two- or three-letter culture code associated with a language
             // and an ISO 3166 two-letter subculture code associated with a country or region.
             // The locale name can also correspond to a valid BCP-47 language tag.
-            Locale *string `json:"locale,omitempty"`
+            Locale *string "json:"locale,omitempty""
             // Text - The text content of the message.
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Speak - The text to speak.
-            Speak *string `json:"speak,omitempty"`
+            Speak *string "json:"speak,omitempty""
             // InputHint - Indicates whether your bot is accepting,
-            // expecting, or ignoring user input after the message is delivered to the client. Possible values include: 'AcceptingInput', 'IgnoringInput', 'ExpectingInput'
-            InputHint InputHintsEnum `json:"inputHint,omitempty"`
+            // expecting, or ignoring user input after the message is delivered to the client. Possible values include: "AcceptingInput", "IgnoringInput", "ExpectingInput"
+            InputHint InputHintsEnum "json:"inputHint,omitempty""
             // Summary - The text to display if the channel cannot render cards.
-            Summary *string `json:"summary,omitempty"`
+            Summary *string "json:"summary,omitempty""
             // SuggestedActions - The suggested actions for the activity.
-            SuggestedActions *SuggestedActionsType `json:"suggestedActions,omitempty"`
+            SuggestedActions *SuggestedActionsType "json:"suggestedActions,omitempty""
             // Attachments - Attachments
-            Attachments *[]AttachmentType `json:"attachments,omitempty"`
+            Attachments *[]AttachmentType "json:"attachments,omitempty""
             // Entities - Represents the entities that were mentioned in the message.
-            Entities *[]EntityType `json:"entities,omitempty"`
+            Entities *[]EntityType "json:"entities,omitempty""
             // ChannelData - Contains channel-specific content.
-            ChannelData interface{} `json:"channelData,omitempty"`
-            // Action - Indicates whether the recipient of a contactRelationUpdate was added or removed from the sender's contact list.
-            Action *string `json:"action,omitempty"`
+            ChannelData interface{} "json:"channelData,omitempty""
+            // Action - Indicates whether the recipient of a contactRelationUpdate was added or removed from the sender"s contact list.
+            Action *string "json:"action,omitempty""
             // ReplyToID - Contains the ID of the message to which this message is a reply.
-            ReplyToID *string `json:"replyToId,omitempty"`
+            ReplyToID *string "json:"replyToId,omitempty""
             // Label - A descriptive label for the activity.
-            Label *string `json:"label,omitempty"`
-            // ValueType - The type of the activity's value object.
-            ValueType *string `json:"valueType,omitempty"`
+            Label *string "json:"label,omitempty""
+            // ValueType - The type of the activity"s value object.
+            ValueType *string "json:"valueType,omitempty""
             // Value - A value that is associated with the activity.
-            Value interface{} `json:"value,omitempty"`
+            Value interface{} "json:"value,omitempty""
             // Name - The name of the operation associated with an invoke or event activity.
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             // RelatesTo - A reference to another conversation or activity.
-            RelatesTo *ConversationReferenceType `json:"relatesTo,omitempty"`
-            // Code - The a code for endOfConversation activities that indicates why the conversation ended. Possible values include: 'Unknown', 'CompletedSuccessfully', 'UserCancelled', 'BotTimedOut', 'BotIssuedInvalidMessage', 'ChannelFailed'
-            Code EndOfConversationCodesEnum `json:"code,omitempty"`
+            RelatesTo *ConversationReferenceType "json:"relatesTo,omitempty""
+            // Code - The a code for endOfConversation activities that indicates why the conversation ended. Possible values include: "Unknown", "CompletedSuccessfully", "UserCancelled", "BotTimedOut", "BotIssuedInvalidMessage", "ChannelFailed"
+            Code EndOfConversationCodesEnum "json:"code,omitempty""
             // Expiration - The time at which the activity should be considered to be "expired" and should not be presented to the recipient.
-            Expiration *date.Time `json:"expiration,omitempty"`
-            // Importance - The importance of the activity. Possible values include: 'Low', 'Normal', 'High'
-            Importance ActivityImportanceEnum `json:"importance,omitempty"`
+            Expiration *date.Time "json:"expiration,omitempty""
+            // Importance - The importance of the activity. Possible values include: "Low", "Normal", "High"
+            Importance ActivityImportanceEnum "json:"importance,omitempty""
             // DeliveryMode - A delivery hint to signal to the recipient alternate delivery paths for the activity.
-            // The default delivery mode is "default". Possible values include: 'DeliveryModesEnumNormal', 'DeliveryModesEnumNotification'
-            DeliveryMode DeliveryModesEnum `json:"deliveryMode,omitempty"`
+            // The default delivery mode is "default". Possible values include: "DeliveryModesEnumNormal", "DeliveryModesEnumNotification"
+            DeliveryMode DeliveryModesEnum "json:"deliveryMode,omitempty""
             // ListenFor - List of phrases and references that speech and language priming systems should listen for
-            ListenFor *[]string `json:"listenFor,omitempty"`
+            ListenFor *[]string "json:"listenFor,omitempty""
             // TextHighlights - The collection of text fragments to highlight when the activity contains a ReplyToId value.
-            TextHighlights *[]TextHighlightType `json:"textHighlights,omitempty"`
+            TextHighlights *[]TextHighlightType "json:"textHighlights,omitempty""
             // SemanticAction - An optional programmatic action accompanying this request
-            SemanticAction *SemanticActionType `json:"semanticAction,omitempty"`
+            SemanticAction *SemanticActionType "json:"semanticAction,omitempty""
             }
 
             // AnimationCardType an animation card (Ex: gif or short video clip)
             type AnimationCardType struct {
             // Title - Title of this card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of this card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text of this card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Image - Thumbnail placeholder
-            Image *ThumbnailURLType `json:"image,omitempty"`
+            Image *ThumbnailURLType "json:"image,omitempty""
             // Media - Media URLs for this card. When this field contains more than one URL, each URL is an alternative format of the same content.
-            Media *[]MediaURLType `json:"media,omitempty"`
+            Media *[]MediaURLType "json:"media,omitempty""
             // Buttons - Actions on this card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Shareable - This content may be shared with others (default:true)
-            Shareable *bool `json:"shareable,omitempty"`
+            Shareable *bool "json:"shareable,omitempty""
             // Autoloop - Should the client loop playback at end of content (default:true)
-            Autoloop *bool `json:"autoloop,omitempty"`
+            Autoloop *bool "json:"autoloop,omitempty""
             // Autostart - Should the client automatically start playback of media in this card (default:true)
-            Autostart *bool `json:"autostart,omitempty"`
+            Autostart *bool "json:"autostart,omitempty""
             // Aspect - Aspect ratio of thumbnail/media placeholder. Allowed values are "16:9" and "4:3"
-            Aspect *string `json:"aspect,omitempty"`
+            Aspect *string "json:"aspect,omitempty""
             // Duration - Describes the length of the media content without requiring a receiver to open the content. Formatted as an ISO 8601 Duration field.
-            Duration *string `json:"duration,omitempty"`
+            Duration *string "json:"duration,omitempty""
             // Value - Supplementary parameter for this card
-            Value interface{} `json:"value,omitempty"`
+            Value interface{} "json:"value,omitempty""
             }
 
             // AttachmentDataType attachment data
             type AttachmentDataType struct {
             // Type - Content-Type of the attachment
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             // Name - Name of the attachment
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             // OriginalBase64 - Attachment content
-            OriginalBase64 *[]byte `json:"originalBase64,omitempty"`
+            OriginalBase64 *[]byte "json:"originalBase64,omitempty""
             // ThumbnailBase64 - Attachment thumbnail
-            ThumbnailBase64 *[]byte `json:"thumbnailBase64,omitempty"`
+            ThumbnailBase64 *[]byte "json:"thumbnailBase64,omitempty""
             }
 
             // AttachmentInfoType metadata for an attachment
             type AttachmentInfoType struct {
-            autorest.Response `json:"-"`
+            autorest.Response "json:"-""
             // Name - Name of the attachment
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             // Type - ContentType of the attachment
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             // Views - attachment views
-            Views *[]AttachmentViewType `json:"views,omitempty"`
+            Views *[]AttachmentViewType "json:"views,omitempty""
             }
 
             // AttachmentType an attachment within an activity
             type AttachmentType struct {
             // ContentType - mimetype/Contenttype for the file
-            ContentType *string `json:"contentType,omitempty"`
+            ContentType *string "json:"contentType,omitempty""
             // ContentURL - Content Url
-            ContentURL *string `json:"contentUrl,omitempty"`
+            ContentURL *string "json:"contentUrl,omitempty""
             // Content - Embedded content
-            Content interface{} `json:"content,omitempty"`
+            Content interface{} "json:"content,omitempty""
             // Name - (OPTIONAL) The name of the attachment
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             // ThumbnailURL - (OPTIONAL) Thumbnail associated with attachment
-            ThumbnailURL *string `json:"thumbnailUrl,omitempty"`
+            ThumbnailURL *string "json:"thumbnailUrl,omitempty""
             }
 
             // AttachmentViewType attachment View name and size
             type AttachmentViewType struct {
             // ViewID - Id of the attachment
-            ViewID *string `json:"viewId,omitempty"`
+            ViewID *string "json:"viewId,omitempty""
             // Size - Size of the attachment
-            Size *int32 `json:"size,omitempty"`
+            Size *int32 "json:"size,omitempty""
             }
 
             // AudioCardType audio card
             type AudioCardType struct {
             // Title - Title of this card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of this card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text of this card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Image - Thumbnail placeholder
-            Image *ThumbnailURLType `json:"image,omitempty"`
+            Image *ThumbnailURLType "json:"image,omitempty""
             // Media - Media URLs for this card. When this field contains more than one URL, each URL is an alternative format of the same content.
-            Media *[]MediaURLType `json:"media,omitempty"`
+            Media *[]MediaURLType "json:"media,omitempty""
             // Buttons - Actions on this card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Shareable - This content may be shared with others (default:true)
-            Shareable *bool `json:"shareable,omitempty"`
+            Shareable *bool "json:"shareable,omitempty""
             // Autoloop - Should the client loop playback at end of content (default:true)
-            Autoloop *bool `json:"autoloop,omitempty"`
+            Autoloop *bool "json:"autoloop,omitempty""
             // Autostart - Should the client automatically start playback of media in this card (default:true)
-            Autostart *bool `json:"autostart,omitempty"`
+            Autostart *bool "json:"autostart,omitempty""
             // Aspect - Aspect ratio of thumbnail/media placeholder. Allowed values are "16:9" and "4:3"
-            Aspect *string `json:"aspect,omitempty"`
+            Aspect *string "json:"aspect,omitempty""
             // Duration - Describes the length of the media content without requiring a receiver to open the content. Formatted as an ISO 8601 Duration field.
-            Duration *string `json:"duration,omitempty"`
+            Duration *string "json:"duration,omitempty""
             // Value - Supplementary parameter for this card
-            Value interface{} `json:"value,omitempty"`
+            Value interface{} "json:"value,omitempty""
             }
 
             // BasicCardType a basic card
             type BasicCardType struct {
             // Title - Title of the card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of the card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text for the card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Images - Array of images for the card
-            Images *[]CardImageType `json:"images,omitempty"`
+            Images *[]CardImageType "json:"images,omitempty""
             // Buttons - Set of actions applicable to the current card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Tap - This action will be activated when user taps on the card itself
-            Tap *CardActionType `json:"tap,omitempty"`
+            Tap *CardActionType "json:"tap,omitempty""
             }
 
             // CardActionType a clickable action
             type CardActionType struct {
-            // Type - The type of action implemented by this button. Possible values include: 'OpenURL', 'ImBack', 'PostBack', 'PlayAudio', 'PlayVideo', 'ShowImage', 'DownloadFile', 'Signin', 'Call', 'Payment', 'MessageBack'
-            Type ActionTypesEnum `json:"type,omitempty"`
+            // Type - The type of action implemented by this button. Possible values include: "OpenURL", "ImBack", "PostBack", "PlayAudio", "PlayVideo", "ShowImage", "DownloadFile", "Signin", "Call", "Payment", "MessageBack"
+            Type ActionTypesEnum "json:"type,omitempty""
             // Title - Text description which appears on the button
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Image - Image URL which will appear on the button, next to text label
-            Image *string `json:"image,omitempty"`
+            Image *string "json:"image,omitempty""
             // Text - Text for this action
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // DisplayText - (Optional) text to display in the chat feed if the button is clicked
-            DisplayText *string `json:"displayText,omitempty"`
+            DisplayText *string "json:"displayText,omitempty""
             // Value - Supplementary parameter for action. Content of this property depends on the ActionType
-            Value interface{} `json:"value,omitempty"`
+            Value interface{} "json:"value,omitempty""
             // ChannelData - Channel-specific data associated with this action
-            ChannelData interface{} `json:"channelData,omitempty"`
+            ChannelData interface{} "json:"channelData,omitempty""
             }
 
             // CardImageType an image on a card
             type CardImageType struct {
             // URL - URL thumbnail image for major content property
-            URL *string `json:"url,omitempty"`
+            URL *string "json:"url,omitempty""
             // Alt - Image description intended for screen readers
-            Alt *string `json:"alt,omitempty"`
+            Alt *string "json:"alt,omitempty""
             // Tap - Action assigned to specific Attachment
-            Tap *CardActionType `json:"tap,omitempty"`
+            Tap *CardActionType "json:"tap,omitempty""
             }
 
             // ChannelAccountType channel account information needed to route a message
             type ChannelAccountType struct {
             // ID - Channel id for the user or bot on this channel (Example: joe@smith.com, or @joesmith or 123456)
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Name - Display friendly name
-            Name *string `json:"name,omitempty"`
-            // AadObjectID - This account's object ID within Azure Active Directory (AAD)
-            AadObjectID *string `json:"aadObjectId,omitempty"`
-            // Role - Role of the entity behind the account (Example: User, Bot, etc.). Possible values include: 'User', 'Bot'
-            Role RoleTypesEnum `json:"role,omitempty"`
+            Name *string "json:"name,omitempty""
+            // AadObjectID - This account"s object ID within Azure Active Directory (AAD)
+            AadObjectID *string "json:"aadObjectId,omitempty""
+            // Role - Role of the entity behind the account (Example: User, Bot, etc.). Possible values include: "User", "Bot"
+            Role RoleTypesEnum "json:"role,omitempty""
             }
 
             // ConversationAccountType conversation account represents the identity of the conversation within a
             // channel
             type ConversationAccountType struct {
             // IsGroup - Indicates whether the conversation contains more than two participants at the time the activity was generated
-            IsGroup *bool `json:"isGroup,omitempty"`
+            IsGroup *bool "json:"isGroup,omitempty""
             // ConversationType - Indicates the type of the conversation in channels that distinguish between conversation types
-            ConversationType *string `json:"conversationType,omitempty"`
-            // TenantID - This conversation's tenant ID
-            TenantID *string `json:"tenantId,omitempty"`
+            ConversationType *string "json:"conversationType,omitempty""
+            // TenantID - This conversation"s tenant ID
+            TenantID *string "json:"tenantId,omitempty""
             // ID - Channel id for the user or bot on this channel (Example: joe@smith.com, or @joesmith or 123456)
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Name - Display friendly name
-            Name *string `json:"name,omitempty"`
-            // AadObjectID - This account's object ID within Azure Active Directory (AAD)
-            AadObjectID *string `json:"aadObjectId,omitempty"`
-            // Role - Role of the entity behind the account (Example: User, Bot, etc.). Possible values include: 'User', 'Bot'
-            Role RoleTypesEnum `json:"role,omitempty"`
+            Name *string "json:"name,omitempty""
+            // AadObjectID - This account"s object ID within Azure Active Directory (AAD)
+            AadObjectID *string "json:"aadObjectId,omitempty""
+            // Role - Role of the entity behind the account (Example: User, Bot, etc.). Possible values include: "User", "Bot"
+            Role RoleTypesEnum "json:"role,omitempty""
             }
 
             // ConversationMembersType conversation and its members
             type ConversationMembersType struct {
             // ID - Conversation ID
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Members - List of members in this conversation
-            Members *[]ChannelAccountType `json:"members,omitempty"`
+            Members *[]ChannelAccountType "json:"members,omitempty""
             }
 
             // ConversationParametersType parameters for creating a new conversation
             type ConversationParametersType struct {
             // IsGroup - IsGroup
-            IsGroup *bool `json:"isGroup,omitempty"`
+            IsGroup *bool "json:"isGroup,omitempty""
             // Bot - The bot address for this conversation
-            Bot *ChannelAccountType `json:"bot,omitempty"`
+            Bot *ChannelAccountType "json:"bot,omitempty""
             // Members - Members to add to the conversation
-            Members *[]ChannelAccountType `json:"members,omitempty"`
+            Members *[]ChannelAccountType "json:"members,omitempty""
             // TopicName - (Optional) Topic of the conversation (if supported by the channel)
-            TopicName *string `json:"topicName,omitempty"`
+            TopicName *string "json:"topicName,omitempty""
             // TenantID - (Optional) The tenant ID in which the conversation should be created
-            TenantID *string `json:"tenantId,omitempty"`
+            TenantID *string "json:"tenantId,omitempty""
             // Activity - (Optional) When creating a new conversation, use this activity as the initial message to the conversation
-            Activity *ActivityType `json:"activity,omitempty"`
+            Activity *ActivityType "json:"activity,omitempty""
             // ChannelData - Channel specific payload for creating the conversation
-            ChannelData interface{} `json:"channelData,omitempty"`
+            ChannelData interface{} "json:"channelData,omitempty""
             }
 
             // ConversationReferenceType an object relating to a particular point in a conversation
             type ConversationReferenceType struct {
             // ActivityID - (Optional) ID of the activity to refer to
-            ActivityID *string `json:"activityId,omitempty"`
+            ActivityID *string "json:"activityId,omitempty""
             // User - (Optional) User participating in this conversation
-            User *ChannelAccountType `json:"user,omitempty"`
+            User *ChannelAccountType "json:"user,omitempty""
             // Bot - Bot participating in this conversation
-            Bot *ChannelAccountType `json:"bot,omitempty"`
+            Bot *ChannelAccountType "json:"bot,omitempty""
             // Conversation - Conversation reference
-            Conversation *ConversationAccountType `json:"conversation,omitempty"`
+            Conversation *ConversationAccountType "json:"conversation,omitempty""
             // ChannelID - Channel ID
-            ChannelID *string `json:"channelId,omitempty"`
+            ChannelID *string "json:"channelId,omitempty""
             // ServiceURL - Service endpoint where operations concerning the referenced conversation may be performed
-            ServiceURL *string `json:"serviceUrl,omitempty"`
+            ServiceURL *string "json:"serviceUrl,omitempty""
             }
 
             // ConversationResourceResponseType a response containing a resource
             type ConversationResourceResponseType struct {
-            autorest.Response `json:"-"`
+            autorest.Response "json:"-""
             // ActivityID - ID of the Activity (if sent)
-            ActivityID *string `json:"activityId,omitempty"`
+            ActivityID *string "json:"activityId,omitempty""
             // ServiceURL - Service endpoint where operations concerning the conversation may be performed
-            ServiceURL *string `json:"serviceUrl,omitempty"`
+            ServiceURL *string "json:"serviceUrl,omitempty""
             // ID - Id of the resource
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             }
 
             // ConversationsResultType conversations result
             type ConversationsResultType struct {
-            autorest.Response `json:"-"`
+            autorest.Response "json:"-""
             // ContinuationToken - Paging token
-            ContinuationToken *string `json:"continuationToken,omitempty"`
+            ContinuationToken *string "json:"continuationToken,omitempty""
             // Conversations - List of conversations
-            Conversations *[]ConversationMembersType `json:"conversations,omitempty"`
+            Conversations *[]ConversationMembersType "json:"conversations,omitempty""
             }
 
             // EntityType metadata object pertaining to an activity
             type EntityType struct {
             // Type - Type of this entity (RFC 3987 IRI)
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             }
 
             // ErrorResponseType an HTTP API response
             type ErrorResponseType struct {
             // Error - Error message
-            Error *ErrorType `json:"error,omitempty"`
+            Error *ErrorType "json:"error,omitempty""
             }
 
             // ErrorType object representing error information
             type ErrorType struct {
             // Code - Error code
-            Code *string `json:"code,omitempty"`
+            Code *string "json:"code,omitempty""
             // Message - Error message
-            Message *string `json:"message,omitempty"`
+            Message *string "json:"message,omitempty""
             // InnerHTTPError - Error from inner http call
-            InnerHTTPError *InnerHTTPErrorType `json:"innerHttpError,omitempty"`
+            InnerHTTPError *InnerHTTPErrorType "json:"innerHttpError,omitempty""
             }
 
             // FactType set of key-value pairs. Advantage of this section is that key and value properties will be
@@ -618,388 +618,388 @@ const fqdn = "generated"
             // developer to specify style information.
             type FactType struct {
             // Key - The key for this Fact
-            Key *string `json:"key,omitempty"`
+            Key *string "json:"key,omitempty""
             // Value - The value for this Fact
-            Value *string `json:"value,omitempty"`
+            Value *string "json:"value,omitempty""
             }
 
             // GeoCoordinatesType geoCoordinates (entity type: "https://schema.org/GeoCoordinates")
             type GeoCoordinatesType struct {
             // Elevation - Elevation of the location [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)
-            Elevation *float64 `json:"elevation,omitempty"`
+            Elevation *float64 "json:"elevation,omitempty""
             // Latitude - Latitude of the location [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)
-            Latitude *float64 `json:"latitude,omitempty"`
+            Latitude *float64 "json:"latitude,omitempty""
             // Longitude - Longitude of the location [WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)
-            Longitude *float64 `json:"longitude,omitempty"`
+            Longitude *float64 "json:"longitude,omitempty""
             // Type - The type of the thing
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             // Name - The name of the thing
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             }
 
             // HeroCardType a Hero card (card with a single, large image)
             type HeroCardType struct {
             // Title - Title of the card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of the card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text for the card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Images - Array of images for the card
-            Images *[]CardImageType `json:"images,omitempty"`
+            Images *[]CardImageType "json:"images,omitempty""
             // Buttons - Set of actions applicable to the current card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Tap - This action will be activated when user taps on the card itself
-            Tap *CardActionType `json:"tap,omitempty"`
+            Tap *CardActionType "json:"tap,omitempty""
             }
 
             // InnerHTTPErrorType object representing inner http error
             type InnerHTTPErrorType struct {
             // StatusCode - HttpStatusCode from failed request
-            StatusCode *int32 `json:"statusCode,omitempty"`
+            StatusCode *int32 "json:"statusCode,omitempty""
             // Body - Body from failed request
-            Body interface{} `json:"body,omitempty"`
+            Body interface{} "json:"body,omitempty""
             }
 
             // ListChannelAccountType ...
             type ListChannelAccountType struct {
-            autorest.Response `json:"-"`
-            Value *[]ChannelAccountType `json:"value,omitempty"`
+            autorest.Response "json:"-""
+            Value *[]ChannelAccountType "json:"value,omitempty""
             }
 
             // MediaCardType media card
             type MediaCardType struct {
             // Title - Title of this card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of this card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text of this card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Image - Thumbnail placeholder
-            Image *ThumbnailURLType `json:"image,omitempty"`
+            Image *ThumbnailURLType "json:"image,omitempty""
             // Media - Media URLs for this card. When this field contains more than one URL, each URL is an alternative format of the same content.
-            Media *[]MediaURLType `json:"media,omitempty"`
+            Media *[]MediaURLType "json:"media,omitempty""
             // Buttons - Actions on this card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Shareable - This content may be shared with others (default:true)
-            Shareable *bool `json:"shareable,omitempty"`
+            Shareable *bool "json:"shareable,omitempty""
             // Autoloop - Should the client loop playback at end of content (default:true)
-            Autoloop *bool `json:"autoloop,omitempty"`
+            Autoloop *bool "json:"autoloop,omitempty""
             // Autostart - Should the client automatically start playback of media in this card (default:true)
-            Autostart *bool `json:"autostart,omitempty"`
+            Autostart *bool "json:"autostart,omitempty""
             // Aspect - Aspect ratio of thumbnail/media placeholder. Allowed values are "16:9" and "4:3"
-            Aspect *string `json:"aspect,omitempty"`
+            Aspect *string "json:"aspect,omitempty""
             // Duration - Describes the length of the media content without requiring a receiver to open the content. Formatted as an ISO 8601 Duration field.
-            Duration *string `json:"duration,omitempty"`
+            Duration *string "json:"duration,omitempty""
             // Value - Supplementary parameter for this card
-            Value interface{} `json:"value,omitempty"`
+            Value interface{} "json:"value,omitempty""
             }
 
             // MediaEventValueType supplementary parameter for media events
             type MediaEventValueType struct {
             // CardValue - Callback parameter specified in the Value field of the MediaCard that originated this event
-            CardValue interface{} `json:"cardValue,omitempty"`
+            CardValue interface{} "json:"cardValue,omitempty""
             }
 
             // MediaURLType media URL
             type MediaURLType struct {
             // URL - Url for the media
-            URL *string `json:"url,omitempty"`
+            URL *string "json:"url,omitempty""
             // Profile - Optional profile hint to the client to differentiate multiple MediaUrl objects from each other
-            Profile *string `json:"profile,omitempty"`
+            Profile *string "json:"profile,omitempty""
             }
 
             // MentionType mention information (entity type: "mention")
             type MentionType struct {
             // Mentioned - The mentioned user
-            Mentioned *ChannelAccountType `json:"mentioned,omitempty"`
+            Mentioned *ChannelAccountType "json:"mentioned,omitempty""
             // Text - Sub Text which represents the mention (can be null or empty)
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Type - Type of this entity (RFC 3987 IRI)
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             }
 
             // MessageReactionType message reaction object
             type MessageReactionType struct {
-            // Type - Message reaction type. Possible values include: 'Like', 'PlusOne'
-            Type MessageReactionTypesEnum `json:"type,omitempty"`
+            // Type - Message reaction type. Possible values include: "Like", "PlusOne"
+            Type MessageReactionTypesEnum "json:"type,omitempty""
             }
 
             // MicrosoftPayMethodDataType w3C Payment Method Data for Microsoft Pay
             type MicrosoftPayMethodDataType struct {
             // MerchantID - Microsoft Pay Merchant ID
-            MerchantID *string `json:"merchantId,omitempty"`
+            MerchantID *string "json:"merchantId,omitempty""
             // SupportedNetworks - Supported payment networks (e.g., "visa" and "mastercard")
-            SupportedNetworks *[]string `json:"supportedNetworks,omitempty"`
+            SupportedNetworks *[]string "json:"supportedNetworks,omitempty""
             // SupportedTypes - Supported payment types (e.g., "credit")
-            SupportedTypes *[]string `json:"supportedTypes,omitempty"`
+            SupportedTypes *[]string "json:"supportedTypes,omitempty""
             }
 
             // OAuthCardType a card representing a request to perform a sign in via OAuth
             type OAuthCardType struct {
             // Text - Text for signin request
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // ConnectionName - The name of the registered connection
-            ConnectionName *string `json:"connectionName,omitempty"`
+            ConnectionName *string "json:"connectionName,omitempty""
             // Buttons - Action to use to perform signin
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             }
 
             // PagedMembersResultType page of members.
             type PagedMembersResultType struct {
-            autorest.Response `json:"-"`
+            autorest.Response "json:"-""
             // ContinuationToken - Paging token
-            ContinuationToken *string `json:"continuationToken,omitempty"`
+            ContinuationToken *string "json:"continuationToken,omitempty""
             // Members - The Channel Accounts.
-            Members *[]ChannelAccountType `json:"members,omitempty"`
+            Members *[]ChannelAccountType "json:"members,omitempty""
             }
 
             // PaymentAddressType address within a Payment Request
             type PaymentAddressType struct {
             // Country - This is the CLDR (Common Locale Data Repository) region code. For example, US, GB, CN, or JP
-            Country *string `json:"country,omitempty"`
+            Country *string "json:"country,omitempty""
             // AddressLine - This is the most specific part of the address. It can include, for example, a street name, a house number, apartment number, a rural delivery route, descriptive instructions, or a post office box number.
-            AddressLine *[]string `json:"addressLine,omitempty"`
+            AddressLine *[]string "json:"addressLine,omitempty""
             // Region - This is the top level administrative subdivision of the country. For example, this can be a state, a province, an oblast, or a prefecture.
-            Region *string `json:"region,omitempty"`
+            Region *string "json:"region,omitempty""
             // City - This is the city/town portion of the address.
-            City *string `json:"city,omitempty"`
+            City *string "json:"city,omitempty""
             // DependentLocality - This is the dependent locality or sublocality within a city. For example, used for neighborhoods, boroughs, districts, or UK dependent localities.
-            DependentLocality *string `json:"dependentLocality,omitempty"`
+            DependentLocality *string "json:"dependentLocality,omitempty""
             // PostalCode - This is the postal code or ZIP code, also known as PIN code in India.
-            PostalCode *string `json:"postalCode,omitempty"`
+            PostalCode *string "json:"postalCode,omitempty""
             // SortingCode - This is the sorting code as used in, for example, France.
-            SortingCode *string `json:"sortingCode,omitempty"`
-            // LanguageCode - This is the BCP-47 language code for the address. It's used to determine the field separators and the order of fields when formatting the address for display.
-            LanguageCode *string `json:"languageCode,omitempty"`
+            SortingCode *string "json:"sortingCode,omitempty""
+            // LanguageCode - This is the BCP-47 language code for the address. It"s used to determine the field separators and the order of fields when formatting the address for display.
+            LanguageCode *string "json:"languageCode,omitempty""
             // Organization - This is the organization, firm, company, or institution at this address.
-            Organization *string `json:"organization,omitempty"`
+            Organization *string "json:"organization,omitempty""
             // Recipient - This is the name of the recipient or contact person.
-            Recipient *string `json:"recipient,omitempty"`
+            Recipient *string "json:"recipient,omitempty""
             // Phone - This is the phone number of the recipient or contact person.
-            Phone *string `json:"phone,omitempty"`
+            Phone *string "json:"phone,omitempty""
             }
 
             // PaymentCurrencyAmountType supplies monetary amounts
             type PaymentCurrencyAmountType struct {
             // Currency - A currency identifier
-            Currency *string `json:"currency,omitempty"`
+            Currency *string "json:"currency,omitempty""
             // Value - Decimal monetary value
-            Value *string `json:"value,omitempty"`
+            Value *string "json:"value,omitempty""
             // CurrencySystem - Currency system
-            CurrencySystem *string `json:"currencySystem,omitempty"`
+            CurrencySystem *string "json:"currencySystem,omitempty""
             }
 
             // PaymentDetailsModifierType provides details that modify the PaymentDetails based on payment method
             // identifier
             type PaymentDetailsModifierType struct {
             // SupportedMethods - Contains a sequence of payment method identifiers
-            SupportedMethods *[]string `json:"supportedMethods,omitempty"`
+            SupportedMethods *[]string "json:"supportedMethods,omitempty""
             // Total - This value overrides the total field in the PaymentDetails dictionary for the payment method identifiers in the supportedMethods field
-            Total *PaymentItemType `json:"total,omitempty"`
+            Total *PaymentItemType "json:"total,omitempty""
             // AdditionalDisplayItems - Provides additional display items that are appended to the displayItems field in the PaymentDetails dictionary for the payment method identifiers in the supportedMethods field
-            AdditionalDisplayItems *[]PaymentItemType `json:"additionalDisplayItems,omitempty"`
+            AdditionalDisplayItems *[]PaymentItemType "json:"additionalDisplayItems,omitempty""
             // Data - A JSON-serializable object that provides optional information that might be needed by the supported payment methods
-            Data interface{} `json:"data,omitempty"`
+            Data interface{} "json:"data,omitempty""
             }
 
             // PaymentDetailsType provides information about the requested transaction
             type PaymentDetailsType struct {
             // Total - Contains the total amount of the payment request
-            Total *PaymentItemType `json:"total,omitempty"`
+            Total *PaymentItemType "json:"total,omitempty""
             // DisplayItems - Contains line items for the payment request that the user agent may display
-            DisplayItems *[]PaymentItemType `json:"displayItems,omitempty"`
+            DisplayItems *[]PaymentItemType "json:"displayItems,omitempty""
             // ShippingOptions - A sequence containing the different shipping options for the user to choose from
-            ShippingOptions *[]PaymentShippingOptionType `json:"shippingOptions,omitempty"`
+            ShippingOptions *[]PaymentShippingOptionType "json:"shippingOptions,omitempty""
             // Modifiers - Contains modifiers for particular payment method identifiers
-            Modifiers *[]PaymentDetailsModifierType `json:"modifiers,omitempty"`
+            Modifiers *[]PaymentDetailsModifierType "json:"modifiers,omitempty""
             // Error - Error description
-            Error *string `json:"error,omitempty"`
+            Error *string "json:"error,omitempty""
             }
 
             // PaymentItemType indicates what the payment request is for and the value asked for
             type PaymentItemType struct {
             // Label - Human-readable description of the item
-            Label *string `json:"label,omitempty"`
+            Label *string "json:"label,omitempty""
             // Amount - Monetary amount for the item
-            Amount *PaymentCurrencyAmountType `json:"amount,omitempty"`
+            Amount *PaymentCurrencyAmountType "json:"amount,omitempty""
             // Pending - When set to true this flag means that the amount field is not final.
-            Pending *bool `json:"pending,omitempty"`
+            Pending *bool "json:"pending,omitempty""
             }
 
             // PaymentMethodDataType indicates a set of supported payment methods and any associated payment method
             // specific data for those methods
             type PaymentMethodDataType struct {
             // SupportedMethods - Required sequence of strings containing payment method identifiers for payment methods that the merchant web site accepts
-            SupportedMethods *[]string `json:"supportedMethods,omitempty"`
+            SupportedMethods *[]string "json:"supportedMethods,omitempty""
             // Data - A JSON-serializable object that provides optional information that might be needed by the supported payment methods
-            Data interface{} `json:"data,omitempty"`
+            Data interface{} "json:"data,omitempty""
             }
 
             // PaymentOptionsType provides information about the options desired for the payment request
             type PaymentOptionsType struct {
-            // RequestPayerName - Indicates whether the user agent should collect and return the payer's name as part of the payment request
-            RequestPayerName *bool `json:"requestPayerName,omitempty"`
-            // RequestPayerEmail - Indicates whether the user agent should collect and return the payer's email address as part of the payment request
-            RequestPayerEmail *bool `json:"requestPayerEmail,omitempty"`
-            // RequestPayerPhone - Indicates whether the user agent should collect and return the payer's phone number as part of the payment request
-            RequestPayerPhone *bool `json:"requestPayerPhone,omitempty"`
+            // RequestPayerName - Indicates whether the user agent should collect and return the payer"s name as part of the payment request
+            RequestPayerName *bool "json:"requestPayerName,omitempty""
+            // RequestPayerEmail - Indicates whether the user agent should collect and return the payer"s email address as part of the payment request
+            RequestPayerEmail *bool "json:"requestPayerEmail,omitempty""
+            // RequestPayerPhone - Indicates whether the user agent should collect and return the payer"s phone number as part of the payment request
+            RequestPayerPhone *bool "json:"requestPayerPhone,omitempty""
             // RequestShipping - Indicates whether the user agent should collect and return a shipping address as part of the payment request
-            RequestShipping *bool `json:"requestShipping,omitempty"`
+            RequestShipping *bool "json:"requestShipping,omitempty""
             // ShippingType - If requestShipping is set to true, then the shippingType field may be used to influence the way the user agent presents the user interface for gathering the shipping address
-            ShippingType *string `json:"shippingType,omitempty"`
+            ShippingType *string "json:"shippingType,omitempty""
             }
 
             // PaymentRequestCompleteResultType result from a completed payment request
             type PaymentRequestCompleteResultType struct {
             // Result - Result of the payment request completion
-            Result *string `json:"result,omitempty"`
+            Result *string "json:"result,omitempty""
             }
 
             // PaymentRequestCompleteType payload delivered when completing a payment request
             type PaymentRequestCompleteType struct {
             // ID - Payment request ID
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // PaymentRequest - Initial payment request
-            PaymentRequest *PaymentRequestType `json:"paymentRequest,omitempty"`
+            PaymentRequest *PaymentRequestType "json:"paymentRequest,omitempty""
             // PaymentResponse - Corresponding payment response
-            PaymentResponse *PaymentResponseType `json:"paymentResponse,omitempty"`
+            PaymentResponse *PaymentResponseType "json:"paymentResponse,omitempty""
             }
 
             // PaymentRequestType a request to make a payment
             type PaymentRequestType struct {
             // ID - ID of this payment request
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // MethodData - Allowed payment methods for this request
-            MethodData *[]PaymentMethodDataType `json:"methodData,omitempty"`
+            MethodData *[]PaymentMethodDataType "json:"methodData,omitempty""
             // Details - Details for this request
-            Details *PaymentDetailsType `json:"details,omitempty"`
+            Details *PaymentDetailsType "json:"details,omitempty""
             // Options - Provides information about the options desired for the payment request
-            Options *PaymentOptionsType `json:"options,omitempty"`
-            // Expires - Expiration for this request, in ISO 8601 duration format (e.g., 'P1D')
-            Expires *string `json:"expires,omitempty"`
+            Options *PaymentOptionsType "json:"options,omitempty""
+            // Expires - Expiration for this request, in ISO 8601 duration format (e.g., "P1D")
+            Expires *string "json:"expires,omitempty""
             }
 
             // PaymentRequestUpdateResultType a result object from a Payment Request Update invoke operation
             type PaymentRequestUpdateResultType struct {
             // Details - Update payment details
-            Details *PaymentDetailsType `json:"details,omitempty"`
+            Details *PaymentDetailsType "json:"details,omitempty""
             }
 
             // PaymentRequestUpdateType an update to a payment request
             type PaymentRequestUpdateType struct {
             // ID - ID for the payment request to update
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Details - Update payment details
-            Details *PaymentDetailsType `json:"details,omitempty"`
+            Details *PaymentDetailsType "json:"details,omitempty""
             // ShippingAddress - Updated shipping address
-            ShippingAddress *PaymentAddressType `json:"shippingAddress,omitempty"`
+            ShippingAddress *PaymentAddressType "json:"shippingAddress,omitempty""
             // ShippingOption - Updated shipping options
-            ShippingOption *string `json:"shippingOption,omitempty"`
+            ShippingOption *string "json:"shippingOption,omitempty""
             }
 
             // PaymentResponseType a PaymentResponse is returned when a user has selected a payment method and approved
             // a payment request
             type PaymentResponseType struct {
             // MethodName - The payment method identifier for the payment method that the user selected to fulfil the transaction
-            MethodName *string `json:"methodName,omitempty"`
+            MethodName *string "json:"methodName,omitempty""
             // Details - A JSON-serializable object that provides a payment method specific message used by the merchant to process the transaction and determine successful fund transfer
-            Details interface{} `json:"details,omitempty"`
+            Details interface{} "json:"details,omitempty""
             // ShippingAddress - If the requestShipping flag was set to true in the PaymentOptions passed to the PaymentRequest constructor, then shippingAddress will be the full and final shipping address chosen by the user
-            ShippingAddress *PaymentAddressType `json:"shippingAddress,omitempty"`
+            ShippingAddress *PaymentAddressType "json:"shippingAddress,omitempty""
             // ShippingOption - If the requestShipping flag was set to true in the PaymentOptions passed to the PaymentRequest constructor, then shippingOption will be the id attribute of the selected shipping option
-            ShippingOption *string `json:"shippingOption,omitempty"`
+            ShippingOption *string "json:"shippingOption,omitempty""
             // PayerEmail - If the requestPayerEmail flag was set to true in the PaymentOptions passed to the PaymentRequest constructor, then payerEmail will be the email address chosen by the user
-            PayerEmail *string `json:"payerEmail,omitempty"`
+            PayerEmail *string "json:"payerEmail,omitempty""
             // PayerPhone - If the requestPayerPhone flag was set to true in the PaymentOptions passed to the PaymentRequest constructor, then payerPhone will be the phone number chosen by the user
-            PayerPhone *string `json:"payerPhone,omitempty"`
+            PayerPhone *string "json:"payerPhone,omitempty""
             }
 
             // PaymentShippingOptionType describes a shipping option
             type PaymentShippingOptionType struct {
             // ID - String identifier used to reference this PaymentShippingOption
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Label - Human-readable description of the item
-            Label *string `json:"label,omitempty"`
+            Label *string "json:"label,omitempty""
             // Amount - Contains the monetary amount for the item
-            Amount *PaymentCurrencyAmountType `json:"amount,omitempty"`
+            Amount *PaymentCurrencyAmountType "json:"amount,omitempty""
             // Selected - Indicates whether this is the default selected PaymentShippingOption
-            Selected *bool `json:"selected,omitempty"`
+            Selected *bool "json:"selected,omitempty""
             }
 
             // PlaceType place (entity type: "https://schema.org/Place")
             type PlaceType struct {
-            // Address - Address of the place (may be `string` or complex object of type `PostalAddress`)
-            Address interface{} `json:"address,omitempty"`
-            // Geo - Geo coordinates of the place (may be complex object of type `GeoCoordinates` or `GeoShape`)
-            Geo interface{} `json:"geo,omitempty"`
-            // HasMap - Map to the place (may be `string` (URL) or complex object of type `Map`)
-            HasMap interface{} `json:"hasMap,omitempty"`
+            // Address - Address of the place (may be "string" or complex object of type "PostalAddress")
+            Address interface{} "json:"address,omitempty""
+            // Geo - Geo coordinates of the place (may be complex object of type "GeoCoordinates" or "GeoShape")
+            Geo interface{} "json:"geo,omitempty""
+            // HasMap - Map to the place (may be "string" (URL) or complex object of type "Map")
+            HasMap interface{} "json:"hasMap,omitempty""
             // Type - The type of the thing
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             // Name - The name of the thing
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             }
 
             // ReadCloserType ...
             type ReadCloserType struct {
-            autorest.Response `json:"-"`
-            Value *io.ReadCloser `json:"value,omitempty"`
+            autorest.Response "json:"-""
+            Value *io.ReadCloser "json:"value,omitempty""
             }
 
             // ReceiptCardType a receipt card
             type ReceiptCardType struct {
             // Title - Title of the card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Facts - Array of Fact objects
-            Facts *[]FactType `json:"facts,omitempty"`
+            Facts *[]FactType "json:"facts,omitempty""
             // Items - Array of Receipt Items
-            Items *[]ReceiptItemType `json:"items,omitempty"`
+            Items *[]ReceiptItemType "json:"items,omitempty""
             // Tap - This action will be activated when user taps on the card
-            Tap *CardActionType `json:"tap,omitempty"`
+            Tap *CardActionType "json:"tap,omitempty""
             // Total - Total amount of money paid (or to be paid)
-            Total *string `json:"total,omitempty"`
+            Total *string "json:"total,omitempty""
             // Tax - Total amount of tax paid (or to be paid)
-            Tax *string `json:"tax,omitempty"`
+            Tax *string "json:"tax,omitempty""
             // Vat - Total amount of VAT paid (or to be paid)
-            Vat *string `json:"vat,omitempty"`
+            Vat *string "json:"vat,omitempty""
             // Buttons - Set of actions applicable to the current card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             }
 
             // ReceiptItemType an item on a receipt card
             type ReceiptItemType struct {
             // Title - Title of the Card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle appears just below Title field, differs from Title in font styling only
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text field appears just below subtitle, differs from Subtitle in font styling only
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Image - Image
-            Image *CardImageType `json:"image,omitempty"`
+            Image *CardImageType "json:"image,omitempty""
             // Price - Amount with currency
-            Price *string `json:"price,omitempty"`
+            Price *string "json:"price,omitempty""
             // Quantity - Number of items of given kind
-            Quantity *string `json:"quantity,omitempty"`
+            Quantity *string "json:"quantity,omitempty""
             // Tap - This action will be activated when user taps on the Item bubble.
-            Tap *CardActionType `json:"tap,omitempty"`
+            Tap *CardActionType "json:"tap,omitempty""
             }
 
             // ResourceResponseType a response containing a resource ID
             type ResourceResponseType struct {
-            autorest.Response `json:"-"`
+            autorest.Response "json:"-""
             // ID - Id of the resource
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             }
 
             // SemanticActionType represents a reference to a programmatic action
             type SemanticActionType struct {
-            // State - State of this action. Allowed values: `start`, `continue`, `done`. Possible values include: 'Start', 'Continue', 'Done'
-            State SemanticActionStatesEnum `json:"state,omitempty"`
+            // State - State of this action. Allowed values: "start", "continue", "done". Possible values include: "Start", "Continue", "Done"
+            State SemanticActionStatesEnum "json:"state,omitempty""
             // ID - ID of this action
-            ID *string `json:"id,omitempty"`
+            ID *string "json:"id,omitempty""
             // Entities - Entities associated with this action
-            Entities map[string]*EntityType `json:"entities"`
+            Entities map[string]*EntityType "json:"entities""
             }
 
         // MarshalJSON is the custom marshaler for SemanticActionType.
@@ -1020,65 +1020,65 @@ const fqdn = "generated"
             // SigninCardType a card representing a request to sign in
             type SigninCardType struct {
             // Text - Text for signin request
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Buttons - Action to use to perform signin
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             }
 
             // SuggestedActionsType suggestedActions that can be performed
             type SuggestedActionsType struct {
             // To - Ids of the recipients that the actions should be shown to.  These Ids are relative to the channelId and a subset of all recipients of the activity
-            To *[]string `json:"to,omitempty"`
+            To *[]string "json:"to,omitempty""
             // Actions - Actions that can be shown to the user
-            Actions *[]CardActionType `json:"actions,omitempty"`
+            Actions *[]CardActionType "json:"actions,omitempty""
             }
 
             // TextHighlightType refers to a substring of content within another field
             type TextHighlightType struct {
             // Text - Defines the snippet of text to highlight
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Occurrence - Occurrence of the text field within the referenced text, if multiple exist.
-            Occurrence *int32 `json:"occurrence,omitempty"`
+            Occurrence *int32 "json:"occurrence,omitempty""
             }
 
             // ThingType thing (entity type: "https://schema.org/Thing")
             type ThingType struct {
             // Type - The type of the thing
-            Type *string `json:"type,omitempty"`
+            Type *string "json:"type,omitempty""
             // Name - The name of the thing
-            Name *string `json:"name,omitempty"`
+            Name *string "json:"name,omitempty""
             }
 
             // ThumbnailCardType a thumbnail card (card with a single, small thumbnail image)
             type ThumbnailCardType struct {
             // Title - Title of the card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of the card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text for the card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Images - Array of images for the card
-            Images *[]CardImageType `json:"images,omitempty"`
+            Images *[]CardImageType "json:"images,omitempty""
             // Buttons - Set of actions applicable to the current card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Tap - This action will be activated when user taps on the card itself
-            Tap *CardActionType `json:"tap,omitempty"`
+            Tap *CardActionType "json:"tap,omitempty""
             }
 
             // ThumbnailURLType thumbnail URL
             type ThumbnailURLType struct {
             // URL - URL pointing to the thumbnail to use for media content
-            URL *string `json:"url,omitempty"`
+            URL *string "json:"url,omitempty""
             // Alt - HTML alt text to include on this thumbnail image
-            Alt *string `json:"alt,omitempty"`
+            Alt *string "json:"alt,omitempty""
             }
 
             // TokenRequestType a request to receive a user token
             type TokenRequestType struct {
             // Provider - The provider to request a user token from
-            Provider *string `json:"provider,omitempty"`
+            Provider *string "json:"provider,omitempty""
             // Settings - A collection of settings for the specific provider for this request
-            Settings map[string]interface{} `json:"settings"`
+            Settings map[string]interface{} "json:"settings""
             }
 
         // MarshalJSON is the custom marshaler for TokenRequestType.
@@ -1096,46 +1096,46 @@ const fqdn = "generated"
             // TokenResponseType a response that includes a user token
             type TokenResponseType struct {
             // ChannelID - The channelId of the TokenResponse
-            ChannelID *string `json:"channelId,omitempty"`
+            ChannelID *string "json:"channelId,omitempty""
             // ConnectionName - The connection name
-            ConnectionName *string `json:"connectionName,omitempty"`
+            ConnectionName *string "json:"connectionName,omitempty""
             // Token - The user token
-            Token *string `json:"token,omitempty"`
+            Token *string "json:"token,omitempty""
             // Expiration - Expiration for the token, in ISO 8601 format (e.g. "2007-04-05T14:30Z")
-            Expiration *string `json:"expiration,omitempty"`
+            Expiration *string "json:"expiration,omitempty""
             }
 
             // TranscriptType transcript
             type TranscriptType struct {
             // Activities - A collection of Activities that conforms to the Transcript schema.
-            Activities *[]ActivityType `json:"activities,omitempty"`
+            Activities *[]ActivityType "json:"activities,omitempty""
             }
 
             // VideoCardType video card
             type VideoCardType struct {
             // Title - Title of this card
-            Title *string `json:"title,omitempty"`
+            Title *string "json:"title,omitempty""
             // Subtitle - Subtitle of this card
-            Subtitle *string `json:"subtitle,omitempty"`
+            Subtitle *string "json:"subtitle,omitempty""
             // Text - Text of this card
-            Text *string `json:"text,omitempty"`
+            Text *string "json:"text,omitempty""
             // Image - Thumbnail placeholder
-            Image *ThumbnailURLType `json:"image,omitempty"`
+            Image *ThumbnailURLType "json:"image,omitempty""
             // Media - Media URLs for this card. When this field contains more than one URL, each URL is an alternative format of the same content.
-            Media *[]MediaURLType `json:"media,omitempty"`
+            Media *[]MediaURLType "json:"media,omitempty""
             // Buttons - Actions on this card
-            Buttons *[]CardActionType `json:"buttons,omitempty"`
+            Buttons *[]CardActionType "json:"buttons,omitempty""
             // Shareable - This content may be shared with others (default:true)
-            Shareable *bool `json:"shareable,omitempty"`
+            Shareable *bool "json:"shareable,omitempty""
             // Autoloop - Should the client loop playback at end of content (default:true)
-            Autoloop *bool `json:"autoloop,omitempty"`
+            Autoloop *bool "json:"autoloop,omitempty""
             // Autostart - Should the client automatically start playback of media in this card (default:true)
-            Autostart *bool `json:"autostart,omitempty"`
+            Autostart *bool "json:"autostart,omitempty""
             // Aspect - Aspect ratio of thumbnail/media placeholder. Allowed values are "16:9" and "4:3"
-            Aspect *string `json:"aspect,omitempty"`
+            Aspect *string "json:"aspect,omitempty""
             // Duration - Describes the length of the media content without requiring a receiver to open the content. Formatted as an ISO 8601 Duration field.
-            Duration *string `json:"duration,omitempty"`
+            Duration *string "json:"duration,omitempty""
             // Value - Supplementary parameter for this card
-            Value interface{} `json:"value,omitempty"`
+            Value interface{} "json:"value,omitempty""
             }
 
